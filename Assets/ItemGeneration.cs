@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemGeneration : MonoBehaviour
 {
+    
     public GameObject carPrefab;
     public GameObject coinPrefab;
     public GameObject conePrefab;
