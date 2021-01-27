@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UnityChanController   : MonoBehaviour
-{
+{ 
     private Animator myAnimator;
     private Rigidbody myRigibody;
     private float velocityZ = 16f;
@@ -23,9 +23,9 @@ public class UnityChanController   : MonoBehaviour
     private bool isJButtonDown = false;
     void Start()
     {
+        this.myAnimator = GetComponent<Animator>();
         this.myAnimator.SetFloat("Speed", 1);
         this.myRigibody = GetComponent<Rigidbody>();
-        this.myAnimator = GetComponent<Animator>();
         this.stateText = GameObject.Find("GameResultText");
         this.scoreText = GameObject.Find("ScoreText");
     }
@@ -65,10 +65,9 @@ public class UnityChanController   : MonoBehaviour
             this.myAnimator.SetBool("Jump", false);
         }
         this.myRigibody.velocity = new Vector3(inputVelocityX, inputVelocityY, this.velocityZ);
-        
     }
-       //トリガーモードで他のオブジェクトと接触した場合の処理
-        void OnTriggerEnter(Collider other)
+    //トリガーモードで他のオブジェクトと接触した場合の処理
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag")
         {
@@ -123,6 +122,7 @@ public class UnityChanController   : MonoBehaviour
     {
         this.isRButtonDown = false;
     }
-   
+  
+
 }
 
